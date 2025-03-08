@@ -93,7 +93,15 @@
         document.addEventListener("click", () => {
             inputField.focus();
         });
-
+    
+ (e) => {
+            const key = e.key.toLowerCase();
+            if (['y', 'g', 'h', 'j'].includes(key)) {
+                robot.move(key);
+            } else if (key === 'b') {
+                robot.resize(20);
+            } else if (key === 'v') {
+                robot.resize(-20);
         window.addEventListener("resize", () => {
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
