@@ -52,6 +52,9 @@
             }
             move(direction) {
                 const moves = { 'w': [0, -this.stepSize], 's': [0, this.stepSize], 'a': [-this.stepSize, 0], 'd': [this.stepSize, 0] };
+                const moves = { 'y': [0, -this.stepSize], 'h': [0, this.stepSize], 'g': [-this.stepSize, 0], 'j': [this.stepSize, 0] };
+              
+                
                 if (direction in moves) {
                     this.x += moves[direction][0];
                     this.y += moves[direction][1];
@@ -86,7 +89,7 @@
                 robot.resize(20);
             } else if (key === 'v') {
                 robot.resize(-20);
-            }else if (['y', 'g', 'h', 'j'].includes(key)) {
+            }else if (['y', 'h', 'g', 'j'].includes(key)) {
                 robot2.move(key);
             }    
         });
