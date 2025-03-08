@@ -86,7 +86,9 @@
                 robot.resize(20);
             } else if (key === 'v') {
                 robot.resize(-20);
-            }
+            }else if (['y', 'g', 'h', 'j'].includes(key)) {
+                robot2.move(key);
+            }    
         });
 
         // Focus input field when tapping the screen (for mobile users)
@@ -94,14 +96,6 @@
             inputField.focus();
         });
     
- (e) => {
-            const key = e.key.toLowerCase();
-            if (['y', 'g', 'h', 'j'].includes(key)) {
-                robot.move(key);
-            } else if (key === 'b') {
-                robot.resize(20);
-            } else if (key === 'v') {
-                robot.resize(-20);
         window.addEventListener("resize", () => {
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
